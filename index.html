@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>JROTC LSU Fundraiser Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>JROTC LSU Fundraiser Tracker</h1>
+    <p>Game attendance & cadet participation</p>
+  </div>
+  <button id="exportBtn">Export CSV</button>
+</header>
+
+<main>
+  <section class="stats">
+    <div class="card"><span>Games</span><strong id="gameCount">0</strong></div>
+    <div class="card"><span>Cadets</span><strong id="cadetCount">0</strong></div>
+    <div class="card"><span>Attendance</span><strong id="attendanceCount">0</strong></div>
+  </section>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="games">Games</button>
+    <button class="tab" data-tab="cadets">Cadets</button>
+    <button class="tab" data-tab="reports">Reports</button>
+  </nav>
+
+  <section id="games" class="panel active">
+    <div class="panel-head"><h2>LSU Games</h2><button id="addGameBtn">+ Add Game</button></div>
+    <div id="gamesList"></div>
+  </section>
+
+  <section id="cadets" class="panel">
+    <div class="panel-head"><h2>Cadets</h2><button id="addCadetBtn">+ Add Cadet</button></div>
+    <div id="cadetsList"></div>
+  </section>
+
+  <section id="reports" class="panel">
+    <h2>Attendance Report</h2>
+    <p class="muted">This demo stores data only in this browser. Use Export CSV to save a copy.</p>
+    <div id="reportList"></div>
+  </section>
+</main>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-box">
+    <button class="close" id="closeModal">×</button>
+    <h2 id="modalTitle"></h2>
+    <form id="modalForm"></form>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
